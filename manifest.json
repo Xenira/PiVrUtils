@@ -1,0 +1,10 @@
+{
+    "name": "PiVRLoader",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/Xenira/PiVRLoader",
+    "description": "Library for VR mods",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100",
+        "3_141-PiUtils-0.4.0"
+    ]
+}
