@@ -1,6 +1,6 @@
 {
     "name": "PiVRLoader",
-    "version_number": "0.1.0",
+    "version_number": "0.1.1",
     "website_url": "https://github.com/Xenira/PiVRLoader",
     "description": "Library for VR mods",
     "dependencies": [
