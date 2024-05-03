@@ -70,6 +70,8 @@ jobs:
             version: "${{ steps.release.outputs.major }}.${{ steps.release.outputs.major }}.${{ steps.release.outputs.patch }}"
             repo: thunderstore.io
             token: ${{ secrets.THUNDERSTORE_KEY }}
+      outputs:
+        release_created: ${{ steps.release.outputs.release_created }}
 
     nuget:
       runs-on: windows-2019
@@ -93,4 +95,3 @@ jobs:
         - name: Publish nuget
           run: |
             nuget push "build/${{ github.event.repository.name }}.nupkg" -ApiKey ${{ secrets.NUGET_KEY }} -Source https://api.nuget.org/v3/index.json
-        
