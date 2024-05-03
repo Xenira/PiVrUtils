@@ -1,6 +1,6 @@
 = Pi VR Loader
 // x-release-please-start-version
-v.1.0.0
+v.0.1.0
 // x-release-please-end
 :toclevels: 2
 :sectnums:
