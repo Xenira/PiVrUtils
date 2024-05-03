@@ -1,0 +1,131 @@
+= Pi VR Loader
+// x-release-please-start-version
+v.1.0.0
+// x-release-please-end
+:toclevels: 2
+:sectnums:
+:toc: left
+ifdef::env-github[]
+:toc:
+:toc-placement!:
+:caution-caption: :fire:
+endif::[]
+ifndef::env-github[]
+:toc: left
+endif::[]
+:icons: font
+:source-highlighter: highlightjs
+:game-version: 0.3.0-e
+:repo: Xenira/PiVRLoader
+
+image:https://img.shields.io/github/v/release/{repo}["GitHub release (with filter)", link="https://github.com/{repo}/releases/latest"]
+image:https://img.shields.io/github/release-date/{repo}["GitHub Release Date - Published_At", link="https://github.com/{repo}/releases/latest"]
+image:https://img.shields.io/thunderstore/dt/3_141/PiVRLoader?label=thunderstore.io&color=1d6fa5["Thunderstore.io", link="https://thunderstore.io/c/techtonica/p/3_141/PiVRLoader/"]
+image:https://img.shields.io/github/downloads/{repo}/total?label=github%20downloads["GitHub downloads all releases", link="https://github.com/{repo}/releases"]
+image:https://img.shields.io/liberapay/patrons/rip3.141.svg?logo=liberapay["LiberaPay Patrons", link="https://liberapay.com/rip3.141/"]
+image:https://img.shields.io/github/actions/workflow/status/{repo}/dotnet.yml[GitHub Workflow Status (with event)]
+image:https://img.shields.io/github/issues/{repo}["GitHub issues", link="https://github.com/{repo}/issues"]
+image:https://img.shields.io/github/issues-pr/{repo}["GitHub pull requests", link="https://github.com/{repo}/pulls"]
+image:https://img.shields.io/github/license/{repo}["License", link="https://github.com/{repo}/blob/master/LICENSE"]
+
+++++
+<p align="center">
+  <img src="https://github.com/Xenira/PiVRLoader/raw/master/icon.png" width="256" />
+</p>
+++++
+
+
+This mod adds VR to Unity games. While the aim is to make it work with any Unity game, the primary focus right now is as a support utility for the Techtonica VR mod and won't achieve great results out of the box. It is intended to be used by modders to add VR support games in conjunction with their own mod.
+
+ifdef::env-github[]
+____
+endif::[]
+ifndef::env-github[]
+****
+endif::[]
+I spent countless hours of my free time on this mod.
+If you enjoy it, please consider supporting me on https://liberapay.com/rip3.141[Liberapay] ❤️
+ifndef::env-thunderstore[]
+
+image::https://liberapay.com/assets/widgets/donate.svg["Donate using Liberapay", link="https://liberapay.com/rip3.141"]
+endif::[]
+ifdef::env-github[]
+____
+endif::[]
+ifndef::env-github[]
+****
+endif::[]
+
+ifdef::env-github[]
+toc::[]
+endif::[]
+
+== Prerequisites
+
+* Version {game-version} of the game. As the game is still in early access, this mod may not work with future versions of the game. If you encounter any issues, please create an https://github.com/{repo}/issues[Issue].
+* https://github.com/BepInEx/BepInEx[BepInEx] version BepInEx Version
+* https://github.com/Xenira/PiUtils[PiUtils] mod. Is included in the github release and as as an external dependency in the thunderstore release.
+
+== Setup
+
+This mod assumes you are a developer or familiar with BepInEx and modding in general. If you are using this mod as basis for your own please package it in a way that users don't have to come here to figure out how to install it.
+
+If you are a user, please ask the mod author to provide a more user-friendly installation guide or use a mod manager that can install dependencies.
+
+=== Dependencies
+The github release bundles the dependencies with the mod. The thunderstore release does not include the dependencies. You need to install them separately or use a mod manager that can install dependencies.
+
+==== PiUtils (Required)
+This mod requires the https://github.com/Xenira/PiUtils[PiUtils] mod to be installed. This mod provides some utility functions that are used by the VR mod.
+
+== Configuration
+The configuration file is located in `BepInEx/config/de.xenira.pi_vr_loader.cfg`. You can edit it using a text editor like Notepad.
+
+=== Resetting the Configuration
+To reset the configuration, delete the `de.xenira.pi_vr_loader.cfg` file in the `BepInEx/config` folder. The mod will create a new configuration file with the default values the next time you run the game.
+
+To reset only a specific section, delete the section from the configuration file. The mod will create a new section with the default values the next time you run the game.
+
+=== Configuration Options
+[horizontal]
+.General
+Enabed:: Enables or disables the mod. Default: `true`
+
+[horizontal]
+.Input
+Laser UI Only:: Only show the laser pointer when pointing at UI elements. Default: `true`
+Laser Color:: Color of the laser pointer. Default: `00FFFFFF` Cyan
+Laser Click Color:: Color of the laser pointer when clicking. Default: `0000FFFF` Blue
+Laser Hover Color:: Color of the laser pointer when hovering over a UI element. Default: `00FF00FF` Green
+Laser Invalid Color:: Color of the laser pointer when pointing at an invalid UI element. Default: `FF0000FF` Red
+Laser Thickness:: Thickness of the laser pointer. Default: `0.002`
+Laser Click Thickness Multiplier:: Thickness multiplier of the laser pointer when clicking. Default: `2`
+
+[horizontal]
+.Comfort
+Teleport Range:: Velocity of teleport arc. Effectively determines rang. Default: `12`
+Vignette Enabled:: Enables or disables vignette. If this is disabled the other vignette effects will be disabled as well. Default: `false`
+Vignette On Teleport:: Enables or disables vignette when teleporting. Default: `true`
+Vignette On Smooth Locomotion:: Enables or disables vignette when using smooth locomotion. Default: `true`
+Vignette On Snap Turn:: Enables or disables vignette when using snap turning. Default: `true`
+
+[horizontal]
+.Buttons
+Click Time:: Time window in seconds for a button press to be considered a click. Higher value makes clicks easier, but delay drag 'n drop. Default: `0.2`
+
+[horizontal]
+.UI
+Menu Scroll Speed:: Speed of scrolling through menus by moving the cursor to the edge. Speed increases when nearer to the edge. Default: `0.125`
+Menu Scroll Deadzone:: Deadzone for scrolling through menus by moving the cursor to the edge. In percent from the center. Effectively the size of the region not triggering scrolling. Default: `0.35`
+
+== Troubleshooting
+
+If you encounter any issues while using this mod, please check the BepInEx console for any error messages. You can also report issues on the https://github.com/{repo}/issues[Issues] page of this repository.
+
+== License
+This mod is licensed under the Mozilla Public License 2.0 (MPL 2.0).
+
+Contents of the `unity`, `tools` and `libs` folders are licensed under their respective licenses.
+
+== Disclaimer
+This mod is not affiliated with Unity Technologies or Valve Corporation. All trademarks are the property of their respective owners.
