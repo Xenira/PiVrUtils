@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>pi_vr_loader</AssemblyName>
     <Product>PiVR Loader</Product>
-    <Version>0.6.0</Version> <!-- x-release-please-version -->
+    <Version>0.1.0</Version> <!-- x-release-please-version -->
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
